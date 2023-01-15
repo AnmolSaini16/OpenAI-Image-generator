@@ -44,7 +44,7 @@ function App() {
           <Grid item xs={12}>
             <Typography variant="h3">OpenAI Image Generator</Typography>
           </Grid>
-          <Grid item xl={10} lg={8} md={8} sm={8} xs={6}>
+          <Grid item xl={10} lg={9} md={8} sm={8} xs={6}>
             <input
               placeholder="Search anything"
               value={searchTerm}

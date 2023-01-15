@@ -8,7 +8,6 @@ interface props {
 }
 
 const ImageContainer: React.FC<props> = ({ data, searchValue }) => {
-  console.log("called");
   return (
     <>
       {!data[0].url ? (

@@ -7,7 +7,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import ImageContainer from "./ImageContainer";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: import.meta.env.VITE_KEY,
 });
 const openai = new OpenAIApi(configuration);
 

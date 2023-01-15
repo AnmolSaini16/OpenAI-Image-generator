@@ -57,7 +57,7 @@ function App() {
               onClick={handleSubmit}
               variant="contained"
               size="small"
-              disabled={!searchTerm}
+              disabled={!searchTerm || loading}
             >
               {loading ? (
                 <CircularProgress size="1.2rem" sx={{ color: "whitesmoke" }} />

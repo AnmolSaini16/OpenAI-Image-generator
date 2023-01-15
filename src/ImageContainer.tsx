@@ -9,31 +9,23 @@ interface props {
 
 const ImageContainer: React.FC<props> = ({ data, searchValue }) => {
   return (
-    <>
-      {!data[0].url ? (
-        <Typography variant="h5" sx={{ marginTop: 4 }}>
-          No Results found :(
-        </Typography>
-      ) : (
-        <Box
-          sx={{
-            width: "100%",
-            height: "650px",
-            overflowY: "scroll",
-            backgroundColor: "#151515",
-          }}
-          mt={4}
-        >
-          <ImageList cols={2} gap={16}>
-            {data.map((item) => (
-              <ImageListItem key={item.url}>
-                <img src={item.url} alt={searchValue} loading="lazy" />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </Box>
-      )}
-    </>
+    <Box
+      sx={{
+        width: "100%",
+        height: "650px",
+        overflowY: "scroll",
+        backgroundColor: "#151515",
+      }}
+      mt={4}
+    >
+      <ImageList cols={2} gap={16}>
+        {data.map((item) => (
+          <ImageListItem key={item.url}>
+            <img src={item.url} alt={searchValue} loading="lazy" />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </Box>
   );
 };
 

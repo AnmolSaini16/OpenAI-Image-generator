@@ -35,50 +35,53 @@ function App() {
     <>
       <Box
         p={2}
-        boxShadow={4}
+        boxShadow={6}
         borderRadius={2}
         mt={2}
         className="searchContainer"
       >
-        <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12}>
-            <Typography variant="h3">OpenAI Image Generator</Typography>
-          </Grid>
-          <Grid item xl={10} lg={9} md={8} sm={8} xs={6}>
-            <input
-              placeholder="Search anything"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="input"
-            />
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={handleSubmit}
-              variant="contained"
-              size="small"
-              disabled={!searchTerm || loading}
-            >
-              {loading ? (
-                <CircularProgress size="1.2rem" sx={{ color: "whitesmoke" }} />
-              ) : (
-                <SearchIcon fontSize="small" />
-              )}
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={() => {
-                setSearchTerm(""), setImages([]);
-              }}
-              variant="contained"
-              size="small"
-              color="error"
-            >
-              <ClearIcon fontSize="small" />
-            </Button>
-          </Grid>
-        </Grid>
+        <Box mb={2}>
+          <Typography variant="h4">OpenAI Image Generator</Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <input
+            placeholder="Search anything"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="input"
+          />
+          <Button
+            onClick={handleSubmit}
+            variant="contained"
+            size="small"
+            disabled={!searchTerm || loading}
+            style={{ marginLeft: 8 }}
+          >
+            {loading ? (
+              <CircularProgress size="1.2rem" sx={{ color: "whitesmoke" }} />
+            ) : (
+              <SearchIcon fontSize="small" />
+            )}
+          </Button>
+          <Button
+            onClick={() => {
+              setSearchTerm(""), setImages([]);
+            }}
+            variant="contained"
+            size="small"
+            color="error"
+            style={{ marginLeft: 8 }}
+          >
+            <ClearIcon fontSize="small" />
+          </Button>
+        </Box>
 
         {loading ? (
           <Typography variant="h5" sx={{ marginTop: 4 }}>
